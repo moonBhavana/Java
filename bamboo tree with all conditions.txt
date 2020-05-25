@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class plant
+{
+public static double logb( double a, double b )
+    {
+    return(double)(Math.log(a) / Math.log(b) + 1e-10);
+    }
+
+public static double  log2( double a )
+{
+    return logb(a,2);
+}
+
+public static void main( String[] args )
+{
+		int x=0;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter an integer");
+        /*if(in.hasNextInt())
+        {
+         x = in.nextInt();
+        }*/
+        x = in.nextInt();
+      System.out.println(" value = " +x );
+     if(x<0)
+      System.out.println("Bamboo tree height cannot be negative");
+     if(x==0)
+      System.out.println("Bamboo tree height cannot be zero");
+     if(x>=10000)
+      System.out.println("Bamboo tree height cannot be be more that 10000 feet");
+      if(x%3 == 0) /*&& x!=0 && x<10000 && x<0)*/
+      {
+      	if(x>3)
+      	{
+      		double residue=x/3;
+      	    double y =log2(residue);
+      		if((float)y-(int)(y)==0.0)
+      		{
+      			int year=(int)y;
+     			 System.out.println("It will take " +year+ " years for the bamboo tree to reach height of " +x+ " feet ");
+      		}
+      		/*else
+      		{ 	
+      		    System.out.println("Invalid value");
+           	}*/
+	     }
+      }
+      else if(x%3!= 0 && x!=0 && x<10000 && x>0)
+	   {
+	  	  System.out.println("Invalid");
+	   }
+}
+}
